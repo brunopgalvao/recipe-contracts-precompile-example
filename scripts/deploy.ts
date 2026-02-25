@@ -11,8 +11,11 @@ async function main() {
   const address = await precompileExample.getAddress();
   console.log(`PrecompileExample deployed to: ${address}`);
 
-  const exists = await precompileExample.precompileExists();
-  console.log(`XCM precompile exists: ${exists}`);
+  // Estimate weight for a ClearOrigin XCM v5 instruction
+  const xcmMessage = "0x05040a"; // VersionedXcm::V5 with ClearOrigin
+  const [refTime, proofSize] =
+    await precompileExample.estimateWeight(xcmMessage);
+  console.log(`Weight for ClearOrigin: refTime=${refTime}, proofSize=${proofSize}`);
 }
 
 main().catch((error) => {
