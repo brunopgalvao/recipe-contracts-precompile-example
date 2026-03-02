@@ -9,7 +9,7 @@ This recipe deploys a contract that interacts with the [XCM precompile](https://
 ## Prerequisites
 
 - Node.js 22+
-- A running Chopsticks fork of Asset Hub with eth-rpc (see [Polkadot Cookbook](https://github.com/polkadot-developers/polkadot-cookbook) for CI setup)
+- A running Asset Hub parachain via [Zombienet](https://github.com/paritytech/zombienet) with [eth-rpc](https://github.com/paritytech/polkadot-sdk) bridging to `localhost:8545` (see [Polkadot Cookbook](https://github.com/polkadot-developers/polkadot-cookbook) for CI setup)
 
 ## Usage
 
